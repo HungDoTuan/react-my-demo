@@ -5,7 +5,7 @@ const Navigation = () => {
     return (
             <ChakraProvider>
             <UnorderedList ml={0}>
-                <Flex color='white' bg='crimson' direction='row' padding={10} >
+                <Flex color='white' bg='crimson' direction='row' padding={5} >
                 <List mr={10} >
                     <Link to='/'>Home</Link>
                 </List>

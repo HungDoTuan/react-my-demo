@@ -3,7 +3,7 @@ import { Button, ChakraProvider } from '@chakra-ui/react'
 import { useState } from 'react'
 
 const fetchAlbum = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/albums')
+    const res = await fetch('https://jsonplaceholder.typicode.com/albums?_limit=5')
     return res.json()
 }
 const fetchTodos = async () => {
@@ -12,19 +12,32 @@ const fetchTodos = async () => {
 }
 
 const Post = () => { 
-    const [ render, setRender] = useState(null)
+    const [render, setRender] = useState(null)
+    const [toggle, setToggle] = useState(false)
 
     const [{data: albums}, {data: todos}] = useQueries([
         { queryKey: ['albums'], queryFn: fetchAlbum},
         { queryKey: ['todos'], queryFn: fetchTodos}
     ])
-    console.log(albums)
+
     const handleAlbums = () => {
+        // hiển thị content của albums
         setRender( albums?.map(album => <h2>{album.id}-{album.title}</h2>))
+        // chức năng toggle, ấn lần 1 hiện content của album, ấn lần 2 sẽ ẩn đi content
+        setToggle(!toggle)
+        if (toggle) {
+            setRender('')
+        }
     }
 
     const handleTodos = () => {
-        setRender(todos?.map(todo => <h2>{todo.id}-{todo.title}</h2>))       
+        // hiển thị content của todos
+        setRender(todos?.map(todo => <h2>{todo.id}-{todo.title}</h2>))
+        // chức năng toggle, ấn lần 1 hiện content của todos, ấn lần 2 sẽ ẩn đi content
+        setToggle(!toggle)
+        if (toggle) {
+            setRender('')
+        }       
     }
     return (
         <ChakraProvider>

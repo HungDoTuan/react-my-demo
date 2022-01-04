@@ -31,12 +31,7 @@ const addName = (name) => {
     }
 
     // thực hiện add thêm data vào dữ liệu sẵn có 
-    const { mutate } = useMutation(addName, {
-        onSuccess: (data) =>{
-            console.log(data)
-            refetch()
-        }
-    })
+    const { mutate } = useMutation(addName)
 
     const handleSubmit = () => {
         const data = {newData}

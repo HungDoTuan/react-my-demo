@@ -6,7 +6,6 @@ import Products from './Products'
 import UsersDetail from './UsersDetail'
 import Users from './Users'
 import Post from './Post'
-import AddData from './AddData'
 import { Route, Switch} from 'react-router-dom'
 
 
@@ -32,10 +31,6 @@ function App() {
         <Route path='/post' >
           <Post />
         </Route>
-
-        {/* <Route path='/add-item'>
-          <AddData />
-        </Route> */}
 
         < Route path='/users/:id'>
           <UsersDetail />

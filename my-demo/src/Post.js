@@ -22,7 +22,7 @@ const Post = () => {
 
     const handleAlbums = () => {
         // hiển thị content của albums
-        setRender( albums?.map(album => <h2>{album.id}-{album.title}</h2>))
+        setRender( albums?.map(album => <h2 key={album.id}>{album.id}-{album.title}</h2>))
         // chức năng toggle, ấn lần 1 hiện content của album, ấn lần 2 sẽ ẩn đi content
         setToggle(!toggle)
         if (toggle) {
@@ -32,7 +32,7 @@ const Post = () => {
 
     const handleTodos = () => {
         // hiển thị content của todos
-        setRender(todos?.map(todo => <h2>{todo.id}-{todo.title}</h2>))
+        setRender(todos?.map(todo => <h2 key={todo.id}>{todo.id}-{todo.title}</h2>))
         // chức năng toggle, ấn lần 1 hiện content của todos, ấn lần 2 sẽ ẩn đi content
         setToggle(!toggle)
         if (toggle) {

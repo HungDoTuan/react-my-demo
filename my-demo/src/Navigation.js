@@ -22,10 +22,6 @@ const Navigation = () => {
                     <Link to='/post'>Posts</Link>
                 </List>
 
-                {/* <List mr={10}>
-                    <Link to='/add-item'>Add Item </Link>
-                </List> */}
-
                 </Flex>
             </UnorderedList>
             </ChakraProvider>

@@ -8,7 +8,19 @@ import Users from './Users'
 import Post from './Post'
 import { Route, Switch} from 'react-router-dom'
 
+// const homePage =  <HomePage />
+// const users = <Users/>
 
+// const routes = [
+//   {
+//     path:'/',
+//     component: homePage
+//   },
+//   {
+//     path:'/users',
+//     component: users
+//   }
+// ]
 
 function App() {
   return (

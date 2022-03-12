@@ -12,7 +12,7 @@ const fetchTodos = async () => {
 }
 
 const Post = () => { 
-    const [render, setRender] = useState(null)
+    const [state, setState] = useState(null)
     const [toggle, setToggle] = useState(false)
 
     const [{data: albums}, {data: todos}] = useQueries([
@@ -22,21 +22,21 @@ const Post = () => {
 
     const handleAlbums = () => {
         // hiển thị content của albums
-        setRender( albums?.map(album => <h2 key={album.id}>{album.id}-{album.title}</h2>))
+        setState(albums?.map(album => <h2 key={album.id}>{album.id}-{album.title}</h2>))
         // chức năng toggle, ấn lần 1 hiện content của album, ấn lần 2 sẽ ẩn đi content
         setToggle(!toggle)
         if (toggle) {
-            setRender('')
+            setState('')
         }
     }
 
     const handleTodos = () => {
         // hiển thị content của todos
-        setRender(todos?.map(todo => <h2 key={todo.id}>{todo.id}-{todo.title}</h2>))
+        setState(todos?.map(todo => <h2 key={todo.id}>{todo.id}-{todo.title}</h2>))
         // chức năng toggle, ấn lần 1 hiện content của todos, ấn lần 2 sẽ ẩn đi content
         setToggle(!toggle)
         if (toggle) {
-            setRender('')
+            setState('')
         }       
     }
     return (
@@ -55,7 +55,7 @@ const Post = () => {
         >Todos
         </Button>
         
-        {render}
+        {state}
         </ChakraProvider>
     )
 }
